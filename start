@@ -1,0 +1,7 @@
+#!/bin/bash
+echo ""
+echo "************Hug python launching script**************"
+script_directory=$(dirname $(readlink -f $0))
+cd $script_directory
+
+hug -f server.py

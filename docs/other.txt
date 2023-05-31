@@ -1,0 +1,12 @@
+Maquette:
+https://www.figma.com/file/2G3lUH8wtgFEmG0PKCSmvL/Untitled?type=design&node-id=0-1&t=MB4UWzgwKbGy9mzl-0
+
+Urls:
+
+GET /employee "retourne la liste des salariés"
+
+POST /employee "enregistre un nouveau salariés"
+
+DELETE /employee/<id> "suppr un salariés de la BDD"
+
+PUT /employee/<id>

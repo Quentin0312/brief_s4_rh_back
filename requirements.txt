@@ -4,6 +4,7 @@ falcon==2.0.0
 greenlet==2.0.2
 hug==2.6.1
 idna==3.4
+psycopg2-binary==2.9.6
 requests==2.30.0
 SQLAlchemy==2.0.15
 typing_extensions==4.6.2

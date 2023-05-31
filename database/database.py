@@ -1,6 +1,7 @@
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
+# TODO: Fix this case (file executed from different "space")
 try:
     from utils import getConfig
 except:

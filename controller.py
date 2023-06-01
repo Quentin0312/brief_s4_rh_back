@@ -27,3 +27,10 @@ class EmployeeC:
         session.add(new_employee)
         session.commit()
         return "ok"
+
+    def removeDatas(body):
+        id = body["id"]
+
+        session.query(Employee).filter(Employee.id == id).delete()
+        session.commit()
+        return "ok"

@@ -12,3 +12,4 @@ api_base_url = "/api"
 hug.get(api_base_url + "/employee", api=api)(EmployeeC.getDatas)
 hug.post(api_base_url + "/employee", api=api)(EmployeeC.addDatas)
 hug.delete(api_base_url + "/employee", api=api)(EmployeeC.removeDatas)
+hug.put(api_base_url + "/employee", api=api)(EmployeeC.modifyDatas)

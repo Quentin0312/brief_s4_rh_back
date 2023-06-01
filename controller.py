@@ -34,3 +34,26 @@ class EmployeeC:
         session.query(Employee).filter(Employee.id == id).delete()
         session.commit()
         return "ok"
+
+    def modifyDatas(body):
+        id = body["id"]
+        first_name = body["first_name"]
+        last_name = body["last_name"]
+        gender = body["gender"]
+        phone = body["phone"]
+        email_pro = body["email_pro"]
+        email_perso = body["email_perso"]
+
+        session.query(Employee).filter(Employee.id == id).update(
+            {
+                Employee.first_name: first_name,
+                Employee.last_name: last_name,
+                Employee.gender: gender,
+                Employee.phone: phone,
+                Employee.email_perso: email_perso,
+                Employee.email_pro: email_pro,
+            }
+        )
+        session.commit()
+
+        return "ok"

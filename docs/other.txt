@@ -10,3 +10,7 @@ POST /employee "enregistre un nouveau salariés"
 DELETE /employee/<id> "suppr un salariés de la BDD"
 
 PUT /employee/<id>
+    => stragtégie de remplacement total
+        Au niveau du front:
+            toutes les infos sont récup
+            les nouvelles entré écrase toutes les ancienne données

@@ -2,7 +2,7 @@ import hug
 
 from hug.middleware import CORSMiddleware
 
-from controllers.controller import HelloWorld
+from controller import EmployeeC
 
 api = hug.API(__name__)
 # allow_origins à restreindre pour le déploiement
@@ -10,5 +10,4 @@ api.http.add_middleware(CORSMiddleware(api, allow_origins=["*"]))
 
 api_base_url = "/api"
 
-hug.get(api_base_url + "/hello_world", api=api)(HelloWorld.sayHello)
-# hug.get(api_base_url + "/", api=api)()
+hug.get(api_base_url + "/employee", api=api)(EmployeeC.getDatas)

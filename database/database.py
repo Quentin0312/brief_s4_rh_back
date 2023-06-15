@@ -8,14 +8,26 @@ except:
     from .utils import getConfig
 
 """ Create engine and session communicate with database """
+mode = "prod"  # dev / prod
+
+if mode == "prod":
+    connection_url = (
+        "postgresql://"
+        + getConfig("user")
+        + ":"
+        + getConfig("password")
+        + "@localhost/"
+        + getConfig("database")
+        + ""
+    )
+# TODO: setup secrets
+else:
+    connection_url = (
+        "postgresql://ftsw4800_ftsw4800:azerty97480@localhost/ftsw4800_s4rh"
+    )
+
 engine = create_engine(
-    "postgresql://"
-    + getConfig("user")
-    + ":"
-    + getConfig("password")
-    + "@localhost/"
-    + getConfig("database")
-    + "",
+    connection_url,
     echo=True,
 )
 session = sessionmaker(bind=engine)

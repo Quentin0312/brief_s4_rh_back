@@ -10,7 +10,7 @@ except:
 """ Create engine and session communicate with database """
 mode = "prod"  # dev / prod
 
-if mode == "dev":
+if mode == "prod":
     connection_url = (
         "postgresql://"
         + getConfig("user")

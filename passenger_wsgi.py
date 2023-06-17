@@ -1,4 +1,3 @@
-import imp
 import os
 import sys
 from server import __hug_wsgi__

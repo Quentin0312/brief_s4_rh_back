@@ -16,7 +16,10 @@ class Test:
 
 
 hug.get(api_base_url, api=api)(EmployeeC.getDatas)
-hug.post(api_base_url, api=api)(EmployeeC.addDatas)
+
+# TODO: bandage the POST request issue and change it to PATCH or else !
+# hug.post(api_base_url, api=api)(EmployeeC.addDatas)
+hug.patch(api_base_url, api=api)(EmployeeC.addDatas)
+
 hug.delete(api_base_url, api=api)(EmployeeC.removeDatas)
 hug.put(api_base_url, api=api)(EmployeeC.modifyDatas)
-hug.options(api_base_url, api=api)(Test.returnNone)

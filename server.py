@@ -9,7 +9,14 @@ api.http.add_middleware(CORSMiddleware(api, allow_origins=["*"]))
 
 api_base_url = "/api/employee"
 
+
+class Test:
+    def returnNone():
+        return None
+
+
 hug.get(api_base_url, api=api)(EmployeeC.getDatas)
 hug.post(api_base_url, api=api)(EmployeeC.addDatas)
 hug.delete(api_base_url, api=api)(EmployeeC.removeDatas)
 hug.put(api_base_url, api=api)(EmployeeC.modifyDatas)
+hug.options(api_base_url, api=api)(Test.returnNone)

@@ -1,16 +1,15 @@
+import os
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
-# TODO: Fix this case (file executed from different "space")
 try:
     from utils import getConfig
 except:
     from .utils import getConfig
 
-""" Create engine and session communicate with database """
-mode = "prod"  # dev / prod
 
-if mode == "prod":
+connection_url = os.environ.get("CONNECTION_URL")
+if connection_url is None:
     connection_url = (
         "postgresql://"
         + getConfig("user")
@@ -19,11 +18,6 @@ if mode == "prod":
         + "@localhost/"
         + getConfig("database")
         + ""
-    )
-# TODO: setup secrets
-else:
-    connection_url = (
-        "postgresql://ftsw4800_ftsw4800:azerty97480@localhost/ftsw4800_s4rh"
     )
 
 engine = create_engine(

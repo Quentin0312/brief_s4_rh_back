@@ -20,9 +20,13 @@ if connection_url is None:
         + ""
     )
 
-engine = create_engine(
-    connection_url,
-    echo=True,
-)
+# engine = create_engine(
+#     connection_url,
+#     echo=True,
+# )
+
+# Docker
+engine = create_engine("sqlite:///my_database.db")
+
 session = sessionmaker(bind=engine)
 session = session()

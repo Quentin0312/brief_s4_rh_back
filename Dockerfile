@@ -18,6 +18,4 @@ COPY . .
 EXPOSE 8000
 
 # Définit la commande par défaut pour exécuter le service Hug via WSGI
-# CMD ["gunicorn", "--bind", "0.0.0.0:8000", "app:__hug_wsgi__"]
-
 CMD ["gunicorn", "--bind", "0.0.0.0:8000", "server:__hug_wsgi__"]

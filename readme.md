@@ -1,3 +1,5 @@
+# Local
+
 Add to pyvenv.cfg
 
 [venv]
@@ -9,6 +11,8 @@ password =
 database =
 
 venv file must be ".venv"
+
+# Docker
 
 To run docker:
 
